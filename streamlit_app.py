@@ -41,7 +41,7 @@ def process_metrics(text):
     return json_data
 
 review_text = st.text_area("Text to reviewed",
-                            placeholder="We in these hot ass Texas streets, honey. Y’all know we got Governor Hot Wheels down there, Come on now! And the only thing hot about him is that he is a hot ass mess, honey! So, um, so yes! Yes, yes, yes.Jasmine Crocket",
+                            placeholder="We in these hot ass Texas streets, honey. Y’all know we got Governor Hot Wheels down there, Come on now! And the only thing hot about him is that he is a hot ass mess, honey! So, um, so yes! Yes, yes, yes.",
                             )
 
 safety = st.slider('Personalize Safer Value: (larger value is less safe)',
