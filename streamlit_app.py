@@ -53,8 +53,8 @@ processed_metrics = process_metrics(eval_result[1])
 chart,metric = st.columns(2)
 
 with chart:
-    st.header('Rating')
+    st.subheader('Rating')
     st.pyplot(display_outcome((eval_result[0]['plot'][23::])))
 with metric:
-    st.header('Json Output')
+    st.subheader('Json Output')
     st.dataframe(processed_metrics,column_config={'':'Key','value':'Value'})
