@@ -50,6 +50,11 @@ safety = st.slider('Personalize Safer Value: (larger value is less safe)',
 eval_result = get_toxic(review_text,safety)
 processed_metrics = process_metrics(eval_result[1])
 
-st.pyplot(display_outcome((eval_result[0]['plot'][23::])))
+chart,metric = st.columns(2)
 
-st.dataframe(processed_metrics,column_config={'':'Key','value':'Value'})
+with chart:
+    st.header('Rating')
+    st.pyplot(display_outcome((eval_result[0]['plot'][23::])))
+with metric:
+    st.header('Json Output')
+    st.dataframe(processed_metrics,column_config={'':'Key','value':'Value'})
