@@ -66,7 +66,7 @@ if st.button("Measure 14 categories of Text Toxicity", type="primary"):
         st.subheader('Toxicity')
         st.pyplot(display_outcome(img))
     with metric:
-        st.subheader('Json Output: Toxicity Categories')
+        st.subheader('Toxicity Categories')
         st.dataframe(processed_metrics,column_config={'':'Catergory','value':'Score'})
 
 st.divider()  
@@ -88,9 +88,9 @@ if st.button("Fetch Toxic Text", type="primary"):
         st.subheader('Toxicity')
         st.pyplot(display_outcome(img))
     with metric:
-        st.subheader('Json Output: Toxicity Categories')
+        st.subheader('Toxicity Categories')
         st.dataframe(processed_metrics,column_config={'':'Catergory','value':'Score'})
-    st.subheader("")
+    st.subheader("Fecthed Text Info")
     st.html(toxic_tweets[0])
     
 
