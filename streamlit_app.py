@@ -57,17 +57,17 @@ safety = st.slider('Personalize Safer Value: (larger value is less safe)',
 
 
 
-if st.button("Measure Text Toxicity", type="primary"):
+if st.button("Measure 14 categories of Text Toxicity", type="primary"):
     eval_result = get_toxic(review_text,safety)
     processed_metrics = process_metrics(eval_result[1])
     img = eval_result[0]['plot'][23::]
     chart,metric = st.columns(2)           
     with chart:
-        st.subheader('Rating')
+        st.subheader('Toxicity')
         st.pyplot(display_outcome(img))
     with metric:
-        st.subheader('Json Output')
-        st.dataframe(processed_metrics,column_config={'':'Key','value':'Value'})
+        st.subheader('Json Output: Toxicity Categories')
+        st.dataframe(processed_metrics,column_config={'':'Catergory','value':'Score'})
 
 st.divider()  
 if st.button("Fetch Toxic Text", type="primary"):
@@ -85,11 +85,11 @@ if st.button("Fetch Toxic Text", type="primary"):
         st.subheader('Fethed Text')
         st.text(tweet)     
     with chart:
-        st.subheader('Rating')
+        st.subheader('Toxicity')
         st.pyplot(display_outcome(img))
     with metric:
-        st.subheader('Json Output')
-        st.dataframe(processed_metrics,column_config={'':'Key','value':'Value'})
+        st.subheader('Json Output: Toxicity Categories')
+        st.dataframe(processed_metrics,column_config={'':'Catergory','value':'Score'})
     st.subheader("")
     st.html(toxic_tweets[0])
     
