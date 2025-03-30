@@ -7,7 +7,7 @@ import json
 
 st.title(" Text Toxicity App")
 st.write( "😃 Welcome To The Friendly Text Moderation")
-
+#
 
 def get_toxic(text,lever):
     client = Client("duchaba/Friendly_Text_Moderation")
